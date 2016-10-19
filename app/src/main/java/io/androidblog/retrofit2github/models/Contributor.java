@@ -1,4 +1,4 @@
-package io.androidblog.retrofit2github;
+package io.androidblog.retrofit2github.models;
 
 /**
  * Created by isabelpalomar on 10/19/16.

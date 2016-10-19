@@ -2,7 +2,6 @@ package io.androidblog.retrofit2github;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,7 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import io.androidblog.retrofit2github.api.GitHubService;
+import io.androidblog.retrofit2github.data.GitHubService;
+import io.androidblog.retrofit2github.di.Injector;
+import io.androidblog.retrofit2github.models.Contributor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GitHubService gitHubService = GitHubService.retrofit.create(GitHubService.class);
+                GitHubService gitHubService = Injector.provideGithubService();
+
                 final Call<List<Contributor>> call =
                         gitHubService.repoContributors("CodePathTeam8", "sightseeing-app");
 

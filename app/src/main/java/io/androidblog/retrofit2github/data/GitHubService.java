@@ -1,8 +1,8 @@
-package io.androidblog.retrofit2github.api;
+package io.androidblog.retrofit2github.data;
 
 import java.util.List;
 
-import io.androidblog.retrofit2github.Contributor;
+import io.androidblog.retrofit2github.models.Contributor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -20,8 +20,4 @@ public interface GitHubService {
             @Path("owner") String owner,
             @Path("repo") String repo);
 
-    public static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
 }
