@@ -10,8 +10,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.androidblog.retrofit2github.MainActivity"
+    tools:context="io.androidblog.retrofit2github.contributors.ui.ContributorsActivity"
     tools:showIn="@layout/activity_main">
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_marginRight="5dp" />
 
     <TextView
         android:id="@+id/textView"
